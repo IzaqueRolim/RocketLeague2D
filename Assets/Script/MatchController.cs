@@ -41,7 +41,7 @@ public class MatchController : MonoBehaviourPunCallbacks
             txtCasa.text = "Player"+Random.Range(0,1000).ToString();
 
         }
-       // txtFora.text = PhotonNetwork.PlayerList[1].NickName;
+        txtFora.text = PhotonNetwork.PlayerList[1].NickName;
     }
    
    

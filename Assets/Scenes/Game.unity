@@ -607,7 +607,7 @@ GameObject:
   - component: {fileID: 223616319}
   m_Layer: 5
   m_Name: PlacarCasa
-  m_TagString: Untagged
+  m_TagString: placarCasa
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6672,6 +6672,14 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 67b6e6d664287704bbb65d0a0e60bdee, type: 3}
   - {fileID: 8300000, guid: e3573b3476e38da43b167d375ff3977a, type: 3}
   - {fileID: 8300000, guid: c2fc08af1bb19b54a85e75d76bf31e3b, type: 3}
+  - {fileID: 8300000, guid: bc958fc426fc6bc429a9fa01ccd34817, type: 3}
+  - {fileID: 8300000, guid: c4dfb78c76b890f42885664cc8940af0, type: 3}
+  - {fileID: 8300000, guid: ba17c3224b99b5045938b98de21b518b, type: 3}
+  - {fileID: 8300000, guid: adb7c760f20085246ab7aef568fe4917, type: 3}
+  - {fileID: 8300000, guid: b0294e854c6e9e04e8f461469266cc8c, type: 3}
+  - {fileID: 8300000, guid: f17580b66923bc24ba900780fbd8c088, type: 3}
+  - {fileID: 8300000, guid: fb0fa8dfed055694a90093865be277c2, type: 3}
+  - {fileID: 8300000, guid: a48dcc6c539ea614ba05ed5e46a523d5, type: 3}
   source: {fileID: 997900699}
   source2: {fileID: 997900701}
 --- !u!82 &997900701
@@ -6805,7 +6813,7 @@ GameObject:
   - component: {fileID: 1038629349}
   m_Layer: 5
   m_Name: PlacarFora
-  m_TagString: Untagged
+  m_TagString: placarFora
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8547,7 +8555,7 @@ RectTransform:
   m_GameObject: {fileID: 2929252285075407769}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4042251, y: 1.4042251, z: 1.4042251}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2929252283212038242}
@@ -8556,7 +8564,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 256, y: 256}
+  m_AnchoredPosition: {x: 203.51996, y: 204.47998}
   m_SizeDelta: {x: 256, y: 256}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2929252285075407769

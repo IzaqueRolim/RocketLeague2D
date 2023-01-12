@@ -15,13 +15,20 @@ public class Conn : MonoBehaviourPunCallbacks
 
     [SerializeField]
     private Text nick,res;
+    [SerializeField]
+    private GameObject panel1,panel2;
     
     public int indexCar,indexTime;
     
     
     void Awake(){
+        //
         if (PlayerPrefs.HasKey("nome")){
             PhotonNetwork.NickName = PlayerPrefs.GetString("nome");
+            panel2.SetActive(true);
+        }
+        else{
+            panel1.SetActive(true);
         }
         
         indexCar = 0;
@@ -30,15 +37,31 @@ public class Conn : MonoBehaviourPunCallbacks
         Instancia = this;
         DontDestroyOnLoad(gameObject);
 
-        print(Input.GetJoystickNames());
     }
 
 
     public void Play(Button btn){
         btn.interactable = false;
+
+        PhotonNetwork.NickName = PlayerPrefs.GetString("nome");;
         PhotonNetwork.ConnectUsingSettings();
-        
+
     }
+
+    public void DeleteName(){
+        PlayerPrefs.DeleteAll();
+        panel2.SetActive(false);
+        panel1.SetActive(true);
+    }
+
+    public void SaveName(){
+        PlayerPrefs.SetString("nome",nick.text);
+        
+
+        panel1.SetActive(false);
+        panel2.SetActive(true);
+    }
+    
 
 
     //metodo para verificar se conectou ao servidor, é chamado quando se conecta
@@ -46,8 +69,7 @@ public class Conn : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.JoinRandomRoom();
         PhotonNetwork.JoinLobby();
-        PhotonNetwork.NickName = nick.text;
-
+        
         res.text = res.text+ "Conectado a rede\nProcurando partida...";
     }   
 
@@ -71,13 +93,11 @@ public class Conn : MonoBehaviourPunCallbacks
 
     //é chamado quando entra na sala
     public async override void OnJoinedRoom(){
-               
+        if(PhotonNetwork.CurrentRoom.PlayerCount ==2){      
             PhotonView photonView = PhotonView.Get(this);
             photonView.RPC("MudaTexto", RpcTarget.All);    
             await Task.Delay(1500);
             photonView.RPC("ComecaJogo", RpcTarget.All);    
-        if(PhotonNetwork.CurrentRoom.PlayerCount ==2)
-        {
         }
         else{
             res.text = res.text+ "\nEsperando outro jogador...";
